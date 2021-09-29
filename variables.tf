@@ -63,3 +63,21 @@ variable "lb_connection_idle_timeout" {
 variable "tags" {
   description = "AWS Resource tags"
 }
+
+variable "cert_manager_replicaCount" {
+  default = 2
+  description = "Number of cert-manager controller pods"
+  type = number
+}
+
+variable "cert_manager_version" {
+  description = "cert-manager Chart Version"
+  default = "v1.5.0"
+  type = string
+}
+
+variable "enable_cert_manager" {
+    description = "enable ACME Certificate Manager"
+    default = false
+    type = bool
+}

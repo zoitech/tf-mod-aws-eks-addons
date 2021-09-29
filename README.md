@@ -74,6 +74,7 @@ module "eks_add_ons" {
 
   enable_fluentbit = false
   enable_eks_autoscaler = true
+  enable_cert_manager = true
 
   autoscaler_iam_role_arn = aws_iam_role.autoscaler.arn
   
@@ -139,6 +140,9 @@ No modules.
 | <a name="input_node_group_role_name"></a> [node\_group\_role\_name](#input\_node\_group\_role\_name) | IAM role name of EKS Node Group | `string` | `""` | no |
 | <a name="input_region"></a> [region](#input\_region) | AWS region | `string` | `"eu-central-1"` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | AWS Resource tags | `any` | n/a | yes |
+| <a name="enable_cert_manager"></a> [enable_cert_manager](#input\_enable_cert_manager_) | enable ACME Certificate Manager | `bool` | false | yes |
+| <a name="cert_manager_replicaCount"></a> [cert_manager_replicaCount](#input\_cert_manager_replicaCount_) | Number of cert-manager controller pods | `number` | 2 | no |
+| <a name="cert_manager_version"></a> [cert_manager_version](#input\_cert_manager_version_) | cert-manager Chart Version | `string` | "v1.5.0" | no |
 
 ## Outputs
 

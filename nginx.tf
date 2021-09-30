@@ -36,7 +36,7 @@ resource "helm_release" "nginx" {
 
   set {
     name = "controller.service.annotations.service\\.beta\\.kubernetes\\.io/aws-load-balancer-additional-resource-tags"
-    value = replace(replace(jsonencode(var.tags), "\"", ""), ":", "=")
+    value = replace(replace(replace(replace(jsonencode(var.tags), "\"", ""), ":", "="), "{", ""), "}", "")
   }
 }
 
